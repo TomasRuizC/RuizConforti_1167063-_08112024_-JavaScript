@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio</title>
+  </head>
+  <body>
+    <p id="mensaje"></p>
+    <p id="diasVividos"></p>
+
+    <script>
+      let nombre = prompt("Ingresa tu nombre");
+      let apellido = prompt("Ingresa tu apellido");
+      let fechaNacimiento = prompt(
+        "Ingresa tu fecha de nacimiento (aaaa-mm-dd)"
+      );
+      fechaNacimiento = new Date(fechaNacimiento);
+      let fechaActual = new Date();
+
+      let diferencia = fechaActual - fechaNacimiento; // Diferencia en milisegundos
+      let diasVividos = Math.floor(diferencia / (1000 * 60 * 60 * 24)); // Convertir a días
+
+      document.getElementById(
+        "mensaje"
+      ).innerText = `Hola ${nombre} ${apellido}`;
+      document.getElementById(
+        "diasVividos"
+      ).innerText = `Has vivido ${diasVividos} días`;
+    </script>
+  </body>
+</html>
